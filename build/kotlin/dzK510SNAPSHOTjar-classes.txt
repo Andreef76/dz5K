@@ -1,0 +1,1 @@
+C:\Users\Павел\IdeaProjects\dzK5\build\classes\kotlin\main\Like.class;C:\Users\Павел\IdeaProjects\dzK5\build\classes\kotlin\main\MainKt.class;C:\Users\Павел\IdeaProjects\dzK5\build\classes\kotlin\main\Post.class;C:\Users\Павел\IdeaProjects\dzK5\build\classes\kotlin\main\WallService.class

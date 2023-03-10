@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dzK5</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.kt</span></div><h1>Main.kt</h1><pre class="source lang-java linenums"><span class="fc" id="L1">data class Post(</span>
+<span class="fc" id="L2">    var id: Int,                // Р�РґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РІР»Р°РґРµР»СЊС†Р° СЃС‚РµРЅС‹</span>
+<span class="fc" id="L3">    val ownerId: Int,          // Р�РґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РІР»Р°РґРµР»СЊС†Р° СЃС‚РµРЅС‹</span>
+<span class="fc" id="L4">    val fromId: Int,           // Р�РґРµРЅС‚РёС„РёРєР°С‚РѕСЂ Р°РІС‚РѕСЂР° Р·Р°РїРёСЃРё</span>
+<span class="fc" id="L5">    val createdBy: Int,        // Р�РґРµРЅС‚РёС„РёРєР°С‚РѕСЂ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РєРѕС‚РѕСЂС‹Р№ РѕРїСѓР±Р»РёРєРѕРІР°Р» Р·Р°РїРёСЃСЊ</span>
+<span class="fc" id="L6">    val date: Int,              // Р’СЂРµРјСЏ РїСѓР±Р»РёРєР°С†РёРё Р·Р°РїРёСЃРё</span>
+<span class="fc" id="L7">    val text: String,           // РўРµРєСЃС‚ Р·Р°РїРёСЃРё</span>
+<span class="fc" id="L8">    val canPin: Boolean,       //Р�РЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕРј, РјРѕР¶РµС‚ Р»Рё С‚РµРєСѓС‰РёР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р·Р°РєСЂРµРїРёС‚СЊ Р·Р°РїРёСЃСЊ</span>
+<span class="fc" id="L9">    val canDelete: Boolean,    // Р�РЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕРј, РјРѕР¶РµС‚ Р»Рё С‚РµРєСѓС‰РёР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ</span>
+<span class="fc" id="L10">    val canEdit: Boolean       // Р�РЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕРј, РјРѕР¶РµС‚ Р»Рё С‚РµРєСѓС‰РёР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊ Р·Р°РїРёСЃСЊ</span>
+)
+
+object WallService {        //  РћР±СЉРµРєС‚ WallService, РєРѕС‚РѕСЂС‹Р№ С…СЂР°РЅРёС‚ РїРѕСЃС‚С‹ РІ РјР°СЃСЃРёРІРµ
+<span class="pc" id="L14">    var posts = emptyArray&lt;Post&gt;()</span>
+    fun clear() {    //&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+<span class="fc" id="L16">        posts = emptyArray()</span>
+        // С‚Р°РєР¶Рµ Р·РґРµСЃСЊ РЅСѓР¶РЅРѕ СЃР±СЂРѕСЃРёС‚СЊ СЃС‡РµС‚С‡РёРє РґР»СЏ id РїРѕСЃС‚РѕРІ, РµСЃР»Рё РѕРЅ Сѓ РІР°СЃ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ
+<span class="fc" id="L18">    }   //&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+    fun add(post: Post): Post {       //  РњРµС‚РѕРґ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ Р·Р°РїРёСЃРё
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (post.id == 0) post.id += 1</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        for ((index, newPost) in posts.withIndex()) {</span>
+<span class="pc bpc" id="L22" title="1 of 4 branches missed.">            if (post.id != posts[index].id &amp;&amp; post.id != 0) {</span>
+<span class="fc" id="L23">                var newId = post.id</span>
+<span class="fc" id="L24">                val newPost = Post(newId, post.ownerId, post.fromId, post.createdBy, post.date, post.text, post.canPin, post.canDelete, post.canEdit)</span>
+            } else {
+<span class="fc" id="L26">            post.id += 1</span>
+            }
+         }
+<span class="fc" id="L29">        posts += post</span>
+<span class="fc" id="L30">        return posts.last()</span>
+    }
+
+    fun update(post: Post): Boolean {    //  РњРµС‚РѕРґ РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ Р·Р°РїРёСЃРё
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for ((index, newPost) in posts.withIndex()) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (post.id == posts[index].id) {</span>
+<span class="fc" id="L36">                posts[index] = newPost.copy(post.id, post.ownerId, post.fromId, post.createdBy, post.date, post.text, post.canPin, post.canDelete, post.canEdit)</span>
+<span class="fc" id="L37">                return true</span>
+            }
+        }
+<span class="fc" id="L40">        return false</span>
+    }
+}
+<span class="nc" id="L43">class Like(</span>
+<span class="nc" id="L44">    val count: Int,              //  С‡РёСЃР»Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№, РєРѕС‚РѕСЂС‹Рј РїРѕРЅСЂР°РІРёР»Р°СЃСЊ Р·Р°РїРёСЃСЊ</span>
+<span class="nc" id="L45">    val user_likes: Boolean,     //  РЅР°Р»РёС‡РёРµ РѕС‚РјРµС‚РєРё В«РњРЅРµ РЅСЂР°РІРёС‚СЃСЏВ» РѕС‚ С‚РµРєСѓС‰РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ</span>
+<span class="nc" id="L46">    val can_like: Boolean,       //  РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕРј, РјРѕР¶РµС‚ Р»Рё С‚РµРєСѓС‰РёР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕСЃС‚Р°РІРёС‚СЊ РѕС‚РјРµС‚РєСѓ В«РњРЅРµ РЅСЂР°РІРёС‚СЃСЏВ»</span>
+<span class="nc" id="L47">    val can_publish: Boolean     // РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РѕРј, РјРѕР¶РµС‚ Р»Рё С‚РµРєСѓС‰РёР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СЃРґРµР»Р°С‚СЊ СЂРµРїРѕСЃС‚ Р·Р°РїРёСЃРё</span>
+)
+<span class="nc" id="L49">val likes = Like(count = 0, user_likes = true, can_like = true, can_publish = true)</span>
+
+fun main() {
+<span class="nc" id="L52">    WallService.add(Post(0, 10,1, 1, 1,&quot;РќР•Рў&quot;, true, true, true))</span>
+<span class="nc" id="L53">    println(WallService.posts[0])</span>
+<span class="nc" id="L54">    WallService.add(Post(0, 17,17, 17, 17,&quot;DDD&quot;, true, true, true))</span>
+<span class="nc" id="L55">    println(WallService.posts[1])</span>
+<span class="nc" id="L56">    WallService.add(Post(0, 22,22, 22, 22,&quot;DDD&quot;, true, true, true))</span>
+<span class="nc" id="L57">    println(WallService.posts[2])</span>
+<span class="nc" id="L58">    WallService.add(Post(3, 44,44, 44, 44,&quot;DDD&quot;, true, true, true))</span>
+<span class="nc" id="L59">    println(WallService.posts[3])</span>
+<span class="nc" id="L60">    println()</span>
+<span class="nc" id="L61">    WallService.update(Post(2, 2, 2,2,2,&quot;Р”Рђ&quot;,false,false,false))</span>
+<span class="nc" id="L62">    println(WallService.posts[1])</span>
+
+<span class="nc" id="L64">}</span>
+
+
+
+//   fun add(post: Post): Post {       //  РњРµС‚РѕРґ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ Р·Р°РїРёСЃРё
+//       if (posts.isEmpty()) {
+//           var newId = post.id
+//           val post = Post(newId, post.ownerId, post.fromId, post.createdBy, post.date, post.text, post.canPin, post.canDelete, post.canEdit)
+//       } else {
+//        for ((index, post) in posts.withIndex()) {
+//            if (post.id != posts[index].id) {
+//                var newId = post.id
+//                val post = Post(newId, post.ownerId, post.fromId, post.createdBy, post.date, post.text, post.canPin, post.canDelete, post.canEdit)
+//                posts += post
+//            }
+//            post.id += 1
+//         }
+//
+//    }
+//        return posts.last()
+//  }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
