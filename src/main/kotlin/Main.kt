@@ -27,9 +27,10 @@ data class Post(
     val postSource: PostSource?,
     val geo: Geo?,
     val views: Views?,
-    val donut: Donut?
+    val donut: Donut?,
+    var attachments: Array<Attachment> = emptyArray()     // хранит в массиве объекты класса Attachment
+    )
 
-)
 data class Like(
     val count: Int,              //  число пользователей, которым понравилась запись
     val userLikes: Boolean,     //  наличие отметки «Мне нравится» от текущего пользователя
@@ -124,6 +125,7 @@ val donuts = Donut(isDonut = true, paidDuration = 0, placeholder = null,canPubli
 object WallService {        //  Объект WallService, который хранит посты в массиве
     var posts = emptyArray<Post>()             // хранит посты в массиве
     var copyHistory = emptyArray<Reposts>()    // хранит Репосты в массиве
+
     fun clear() {    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         posts = emptyArray()    // метод очистки clear
         // также здесь нужно сбросить счетчик для id постов, если он у вас используется
@@ -152,7 +154,6 @@ object WallService {        //  Объект WallService, который хра�
                     post.markedAsAds,
                     post.isFavorite,
                     post.postponedId,
-                   // post.copyHistory,
                     post.like,
                     post.comments,
                     post.copyright,
@@ -193,7 +194,6 @@ object WallService {        //  Объект WallService, который хра�
                     post.markedAsAds,
                     post.isFavorite,
                     post.postponedId,
-                   // post.copyHistory,
                     post.like,
                     post.comments,
                     post.copyright,
@@ -212,17 +212,18 @@ object WallService {        //  Объект WallService, который хра�
 
 
 fun main() {
-   WallService.add(Post(0, 10, 1, 1, 1, "НЕТ", true, true, true,0,0,"0",0, 0,0,true,0, likes, comment, copyrights, repost, postSources, geos, view, donuts))
+   WallService.add(Post(0, 10, 1, 1, 1, "НЕТ", true, true, true,0,0,"0",0, 0,0,true,0, null, null, null, null, null, null,null, null))
     println(WallService.posts[0])
-    WallService.add(Post(0, 17, 17, 17, 17, "DDD", true, true, true,0,0,"0",0,0,0,true,0, likes, comment, copyrights, repost, postSources, geos, view, donuts))
+    WallService.add(Post(0, 17, 17, 17, 17, "DDD", true, true, true,0,0,"0",0,0,0,true,0,null, null, null, null, null, null,null, null))
     println(WallService.posts[1])
-    WallService.add(Post(0, 22, 22, 22, 22, "DDD", true, true, true,0,0,"0",0,0,0,true,0, likes, comment, copyrights, repost, postSources, geos, view, donuts))
+    WallService.add(Post(0, 22, 22, 22, 22, "DDD", true, true, true,0,0,"0",0,0,0,true,0, null, null, null, null, null, null,null, null))
     println(WallService.posts[2])
-    WallService.add(Post(3, 44, 44, 44, 44, "DDD", true, true, true,0,0,"0",0,0,0,true,0, likes, comment, copyrights, repost, postSources, geos, view, donuts))
+    WallService.add(Post(3, 44, 44, 44, 44, "DDD", true, true, true,0,0,"0",0,0,0,true,0, null, null, null, null, null, null,null, null))
     println(WallService.posts[3])
     println()
     WallService.update(Post(2, 2, 2, 2, 2, "ДА", false, false, false,0,0,"0",0,0,0,true,0, likes, comment, copyrights, repost, postSources, geos, view, donuts))
     println(WallService.posts[1])
+
 
 }
 
