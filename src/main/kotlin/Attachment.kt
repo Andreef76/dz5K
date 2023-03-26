@@ -25,11 +25,7 @@ val ownerId: Int,                //Идентификатор владельца
 val text: String = "",                 // Текст описания фотографии.
 val date: Int = 1,                    // Дата добавления в формате Unixtime.
 )
-//val ph3 =  Photo(ownerId=5, id=6, albumId = 2, text = "a", date = 5) // так тоже можно
-//val ph4 = Photo(ownerId = 2, date = 5, id = 3, albumId = 2, text = "Dgfsdgf") // вот и инструмент)
-//
-//val ph = Photo(0, ownerId=0) //всё ??? не по порядку когда идёт    увидел что этот параметр тоже был не задан
-//   val ph2 = Photo(0,0,0,"sgdg",556)
+
 class PhotoAttachment(val photo: Photo, override val type: String) : Attachment()
 val photo = Photo(0, ownerId = 0)
 

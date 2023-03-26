@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WallServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-17T16:01:48" hostname="MSI" time="0.111">
+<testsuite name="WallServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-03-26T17:17:30" hostname="MSI" time="0.172">
   <properties/>
-  <testcase name="updateExistingFalse" classname="WallServiceTest" time="0.111"/>
+  <testcase name="createCommentTest" classname="WallServiceTest" time="0.149"/>
+  <testcase name="updateExistingFalse" classname="WallServiceTest" time="0.0"/>
   <testcase name="addTest" classname="WallServiceTest" time="0.0"/>
-  <testcase name="updateExistingTrue" classname="WallServiceTest" time="0.0"/>
+  <testcase name="updateExistingTrue" classname="WallServiceTest" time="0.001"/>
+  <testcase name="reportsTestFine" classname="WallServiceTest" time="0.022"/>
+  <testcase name="reportsTestNoId" classname="WallServiceTest" time="0.0"/>
+  <testcase name="reportsTestBlockId" classname="WallServiceTest" time="0.0"/>
+  <testcase name="createCommentTestThrow" classname="WallServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
