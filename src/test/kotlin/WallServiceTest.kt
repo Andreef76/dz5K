@@ -1,10 +1,11 @@
+
 import WallService.add
 import WallService.createComment
-import WallService.invalidComment
 import WallService.reports
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
+
 
 
 class WallServiceTest {

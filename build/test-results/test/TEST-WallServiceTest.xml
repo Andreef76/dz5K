@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WallServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-03-26T17:17:30" hostname="MSI" time="0.172">
+<testsuite name="WallServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-03-26T20:04:14" hostname="MSI" time="0.127">
   <properties/>
-  <testcase name="createCommentTest" classname="WallServiceTest" time="0.149"/>
+  <testcase name="createCommentTest" classname="WallServiceTest" time="0.106"/>
   <testcase name="updateExistingFalse" classname="WallServiceTest" time="0.0"/>
   <testcase name="addTest" classname="WallServiceTest" time="0.0"/>
-  <testcase name="updateExistingTrue" classname="WallServiceTest" time="0.001"/>
-  <testcase name="reportsTestFine" classname="WallServiceTest" time="0.022"/>
+  <testcase name="updateExistingTrue" classname="WallServiceTest" time="0.0"/>
+  <testcase name="reportsTestFine" classname="WallServiceTest" time="0.021"/>
   <testcase name="reportsTestNoId" classname="WallServiceTest" time="0.0"/>
   <testcase name="reportsTestBlockId" classname="WallServiceTest" time="0.0"/>
   <testcase name="createCommentTestThrow" classname="WallServiceTest" time="0.0"/>
