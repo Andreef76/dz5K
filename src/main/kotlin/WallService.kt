@@ -23,16 +23,14 @@
         fun reports (commentId: Int, reason: Int) : Comment {
             var count = 0
             for ((index, comment: Comment) in comments.withIndex()) {
-                if (comment.id == commentId) {
+                if ((comment.id + 1) == commentId) {
                     count++
                 }
                 when (reason) {
                     in (1..8).minus(7) -> invalidComment += comment
                     else -> throw ReasonNotFoundException("Комментарий не является недопустимым")
                 }
-
-            } // Проверку за цикл нужно было вынести понимал сейчас. но там тоже работало проверял
-
+            } // Проверку за цикл нужно было вынести
             if (count == 0) throw CommentNotFoundException("Комментарий не найден")
             return invalidComment.last()
         }

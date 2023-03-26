@@ -144,8 +144,8 @@ fun main() {
     println(WallService.createComment(2, comment))
     println(WallService.createComment(3, comment))
     println(WallService.createComment(1, comment))
-    println()//всё? ну да. а что за фокусы. когда в одном файле было то работало, тоже скорее всего не работало
-    println(WallService.reports(1,5))
+    println()
+    println(WallService.reports(3,5))
 
 
 }
