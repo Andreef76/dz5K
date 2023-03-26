@@ -145,7 +145,7 @@ fun main() {
     println(WallService.createComment(3, comment))
     println(WallService.createComment(1, comment))
     println()
-    println(WallService.reports(3,5))
+    println(WallService.reports(2,5))
 
 
 }

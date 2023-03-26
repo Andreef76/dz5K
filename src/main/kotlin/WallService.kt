@@ -23,7 +23,7 @@
         fun reports (commentId: Int, reason: Int) : Comment {
             var count = 0
             for ((index, comment: Comment) in comments.withIndex()) {
-                if ((comment.id + 1) == commentId) {
+                if (comment.id  == commentId) {
                     count++
                 }
                 when (reason) {
